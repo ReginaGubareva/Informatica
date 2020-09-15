@@ -21,15 +21,26 @@ public class IncreaseSeq {
         //каждого элемента исходной последовательности
         int[] prev = new int[n];
 
-        for (int i=0; i<n; ++i) {
-            d[i] = 1;
-            prev[i] = -1;
-            for (int j=0; j<i; ++j)
-                if (a[j] < a[i])
-                    if (1 + d[j] > d[i]) {
-                        d[i] = 1 + d[j];
-                        prev[i] = j;
-                    }
+//        for (int i=0; i<n; ++i) {
+//            d[i] = 1;
+//            prev[i] = -1;
+//            for (int j=0; j<i; ++j)
+//                if (a[j] < a[i])
+//                    if (1 + d[j] > d[i]) {
+//                        d[i] = 1 + d[j];
+//                        prev[i] = j;
+//                    }
+//        }
+
+        for (int i=0;i<n;i++) {
+            int maxLen = 0;
+            prev[0] = -1;
+            for (int j=i-1;j>=0;j--)
+                if (a[j] < a[i] && d[j]>maxLen) {
+                    maxLen = d[j];
+                    prev[i] = j;
+                }
+            d[i] = maxLen + 1;
         }
 
 //        for(int i = 0; i < n-1; i++){
@@ -72,41 +83,5 @@ public class IncreaseSeq {
 
         for (int i=0; i<answer.size(); ++i)
             System.out.print(answer.get(i) + " ");
-
-//        for (int i=0;i<n;i++) {
-//            int maxLen = 0;
-//            for (int j=i-1;j>=0;j--)
-//                if (seq[j]<seq[i] && L[j]>maxLen) {
-//                    maxLen = L[j];
-//                }
-//            L[i] = maxLen + 1;
-//        }
     }
-
-//    public static int longestIncreasingSubsequenceLength(int[] numbers) {
-//
-//        if (numbers.length == 1) {
-//            return 1;
-//        }
-//
-//        int[] lengthOfSubsequence = new int[numbers.length];
-//
-//        for (int j = 1; j < numbers.length; j++) {
-//            for (int k = 0; k < j; k++) {
-//                if (numbers[j] > numbers[k]) {
-//                    if (lengthOfSubsequence[j] <= lengthOfSubsequence[k]) {
-//                        lengthOfSubsequence[j] = lengthOfSubsequence[k] + 1;
-//                    }
-//                }
-//            }
-//        }
-//
-//        int maximum = 0;
-//
-//        for (int length: lengthOfSubsequence) {
-//            maximum = Math.max(maximum, length);
-//        }
-//
-//        return maximum;
-//    }
 }
