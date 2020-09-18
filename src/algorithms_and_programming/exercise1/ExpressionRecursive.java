@@ -1,4 +1,4 @@
-package algorithms_and_programming;
+package algorithms_and_programming.exercise1;
 
 import java.io.IOException;
 import java.nio.file.Files;
