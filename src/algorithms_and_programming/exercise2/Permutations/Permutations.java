@@ -1,4 +1,4 @@
-package algorithms_and_programming.exercise2;
+package algorithms_and_programming.exercise2.Permutations;
 
 import java.util.ArrayList;
 import java.util.List;

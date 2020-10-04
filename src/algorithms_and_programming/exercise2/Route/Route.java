@@ -18,7 +18,7 @@ public class Route {
         FastScanner in = new FastScanner(new File(fileIn));
         PrintWriter out = new PrintWriter(new File(fileOut));
         int n = in.nextInt();
-        //Создадим двумерный массив, для хранения исходного массива
+        //Создадим двумерный массив, для хранения исхо дного массива
         int[][] T = new int[n][n];
 
         for(int i = 0; i < n; i++){
