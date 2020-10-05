@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SegmentsIntersection {
+
     public static void main(String[] args) throws IOException {
         FastScanner in = new FastScanner(new File("C:\\Users\\rengu\\IdeaProjects\\Informatica\\src\\algorithms_and_programming\\exercise2\\SegmentsIntersection\\in.txt"));
 //        PrintWriter out = new PrintWriter(new File(fileOut));
